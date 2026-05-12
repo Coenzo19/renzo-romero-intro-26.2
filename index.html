@@ -2,40 +2,126 @@
 <html>
   <head>
     <title>Renzo Romero Portfolio</title>
+    <link href="css/index.css" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Renzo</h1>
+    <header>
+      <h1>Renzo Romero</h1>
+      <nav>
+        <ul class="navBar">
+          <li id="nav-topic"><a href="#anchor1">Skills</a></li>
+          <li id="nav-topic"><a href="#anchor2">Projects</a></li>
+          <li id="nav-topic"><a href="#anchor3">About</a></li>
+          <li id="nav-topic"><a href="#anchor4">Experience</a></li>
+          <li id="nav-topic"><a href="#anchor5">Connect</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <img class="photo" src="images/photo.jpg" alt="picture of me" />
+
+    <!------------------------- Skills ----------------------->
+
+    <section id="Skills">
+      <span id="anchor1"></span>
+      <h2>Skills</h2>
+    </section>
+
+    <!------------------------- Projects ----------------------->
+
+    <section id="Projects">
+      <span id="anchor2"></span>
+      <h2>Projects</h2>
+      <ul></ul>
+    </section>
+
+    <!------------------------- About ----------------------->
+
     <section id="About">
+      <span id="anchor3"></span>
       <h2>About</h2>
       <p>
-        My name is Renzo Romero. I love stategy games and learning new
-        technologies.
+        My name is Renzo Romero. I <strong>love</strong> stategy games and
+        learning new technologies.
       </p>
     </section>
+
+    <!------------------------- Experience ----------------------->
+
     <section id="Experience">
+      <span id="anchor4"></span>
       <h2>Experience</h2>
       <ul>
-        <li>Game Development</li>
-        <li>Bartending</li>
-        <li>3D Art</li>
-        <li>Javascript</li>
-        <li>Java</li>
+        <li class="skill-container">
+          <div class="title-date-cont">
+            <h3 id="text-border">Bartending</h3>
+            <p id="text-border">2021-current</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            repellendus assumenda eos sit at doloremque error suscipit aliquid
+            velit nam expedita qui, rerum id possimus dolores alias sint sed
+            nesciunt!
+          </p>
+        </li>
+
+        <li class="skill-container">
+          <div class="title-date-cont">
+            <h3 id="text-border">Game Development</h3>
+            <p id="text-border">2016-current</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            repellendus assumenda eos sit at doloremque error suscipit aliquid
+            velit nam expedita qui, rerum id possimus dolores alias sint sed
+            nesciunt!
+          </p>
+        </li>
+
+        <li class="skill-container">
+          <div class="title-date-cont">
+            <h3 id="text-border">Software Development</h3>
+            <p id="text-border">2025-Current</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+            repellendus assumenda eos sit at doloremque error suscipit aliquid
+            velit nam expedita qui, rerum id possimus dolores alias sint sed
+            nesciunt!
+          </p>
+        </li>
       </ul>
     </section>
+
+    <!------------------------- Connect ----------------------->
+
     <section id="Connect">
+      <span id="anchor5"></span>
       <h2>Connect</h2>
-      <ul>
+      <ul id="links">
         <li>
           <a
+            class="link"
             href="https://www.linkedin.com/in/renzo-romero-61b131186?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Blqql2Y82SlCAkt5jJKFCJg%3D%3D"
             >LinkedIn</a
           >
         </li>
-        <li><a href="https://rromero16.artstation.com/">Artstation</a></li>
-        <li><a href="https://github.com/Coenzo19">GitHub</a></li>
+        <li>
+          <a class="link" href="https://rromero16.artstation.com/"
+            >Artstation</a
+          >
+        </li>
+        <li><a class="link" href="https://github.com/Coenzo19">GitHub</a></li>
       </ul>
     </section>
   </body>
 </html>
+<!-- comment shortcut is ctr+/ -->
