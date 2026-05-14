@@ -7,14 +7,25 @@ body {
   font-style: normal;
   font-size: 22px;
 }
+h1 {
+  font-weight: 600px;
+  color: rgb(216, 212, 255);
+}
+h2 {
+  font-weight: 600px;
+  color: rgb(180, 193, 216);
+}
 header {
+  display: flex;
+  justify-content: space-between;
   background-color: rgb(55, 175, 184);
   font-style: italic;
   position: sticky;
-  top: 0;
+  top: 0px;
   color: rgb(246, 246, 255);
-  padding: 10px 0;
+  margin: 0;
 }
+
 .photo {
   display: block;
   width: 300px;
@@ -25,56 +36,33 @@ header {
   background-color: rgb(246, 246, 255);
   margin-top: 15px;
 }
-h1 {
-  text-align: center;
-  font-size: 50px;
-  color: rgb(216, 212, 255);
-}
-h2 {
-  text-align: center;
-  font-size: 36px;
-  color: rgb(180, 193, 216);
-}
-
 .navBar {
   display: flex;
-  justify-content: space-around;
+  padding: 25px 10px;
 }
 
-#nav-topic {
-  padding: 0 5px;
+.navBar li {
+  padding: 0px 5px;
   list-style-type: none;
+  color: red;
 }
 
-#anchor1 {
-  position: absolute;
-  top: 440px;
+section {
+  padding: 10px;
+  scroll-margin-top: 5rem;
 }
-#anchor2 {
-  position: absolute;
-  top: 510px;
-}
-#anchor3 {
-  position: absolute;
-  top: 620px;
-}
-#anchor4 {
-  position: absolute;
-  top: 780px;
-}
-#anchor5 {
-  position: absolute;
-  bottom: 0px;
-}
+
 #About {
   padding: 10px;
   text-align: center;
 }
-/* -------------- Experience ------------------ */
-#Experience {
-  
+
+#Experience ul {
+  display: flexbox;
+  flex-direction: row;
 }
-.skill-container {
+
+#Experience ul li {
   color: blue;
   background: lightblue;
   border: 2px solid blue;
@@ -84,16 +72,12 @@ h2 {
 .title-date-cont {
   display: flex;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 10px;
+}
+#Experience ul li p {
+  padding: 10px;
 }
 
-#text-border {
-  border: 2px solid rgb(16, 185, 120);
-  border-radius: 10px;
-  padding: 5px;
-}
-
-/* ------Connect------ */
 #Connect {
   padding-bottom: 15px;
   font-style: italic;
@@ -102,14 +86,17 @@ h2 {
 .link {
   color: green;
 }
-#links {
+#Connect ul {
   display: flex;
   justify-content: space-around;
 }
 
-/* class uses a . + element */
-/* border: 2px dotted pink;
-    border-left:2px solid red;
-    border-botom-color: red
-    margin:10px 10px 10px 10px
-    padding */
+@media all and (max-width: 750px) {
+  .navBar {
+    flex-direction: column;
+    color: blue;
+  }
+  header {
+    position: static;
+  }
+}
