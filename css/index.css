@@ -7,34 +7,23 @@ body {
   color: #103963;
   font-size: 22px;
 }
-
+h1 {
+  font-weight: 600px;
+  color: rgb(216, 212, 255);
+}
+h2 {
+  font-weight: 600px;
+  color: rgb(180, 193, 216);
+}
 header {
   display: flex;
   justify-content: space-between;
-  background-color: #1e5d9b;
+  background-color: rgb(55, 175, 184);
   font-style: italic;
   position: sticky;
   top: 0px;
-}
-
-h1 {
-  font-weight: 600;
-  color: rgb(216, 212, 255);
-}
-
-h2 {
-  font-weight: 600;
-  color: #188383;
-}
-
-h3 {
-  color: #053737;
-}
-
-header h1 {
-  padding-left: 10px;
-  padding-top: 10px;
-  margin: 0px;
+  color: rgb(246, 246, 255);
+  margin: 0;
 }
 
 .photo {
@@ -47,21 +36,20 @@ header h1 {
   background-color: rgb(246, 246, 255);
   margin-top: 15px;
 }
-
 .navBar {
   display: flex;
   padding: 25px 10px;
-  margin: 0px;
 }
 
 .navBar li {
-  padding: 0px 8px;
+  padding: 0px 5px;
   list-style-type: none;
+  color: red;
 }
 
 section {
   padding: 10px;
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 5rem;
 }
 
 #About {
@@ -69,12 +57,12 @@ section {
 }
 
 #Experience ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0px;
+  display: flexbox;
+  flex-direction: row;
 }
 
 #Experience ul li {
+  color: blue;
   background: lightblue;
   border: 2px solid blue;
   margin: 5px;
@@ -84,16 +72,10 @@ section {
 .title-date-cont {
   display: flex;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 10px;
 }
-
-#experience-date {
-  color: blue;
-  padding-top: 10px;
-}
-
-#experience-content {
-  padding: 0 10px;
+#Experience ul li p {
+  padding: 10px;
 }
 
 #Connect {
@@ -104,15 +86,12 @@ section {
 .navLink {
   color: #4efd9f;
 }
-
 #Connect ul {
   display: flex;
   justify-content: space-around;
 }
-.link {
-  color: #1e5d9b;
-}
-@media all and (max-width: 780px) {
+
+@media all and (max-width: 750px) {
   .navBar {
     flex-direction: column;
     color: blue;
