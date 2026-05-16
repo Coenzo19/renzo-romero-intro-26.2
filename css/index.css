@@ -1,24 +1,33 @@
 body {
   margin: 0;
-  background-color: #E0EDFC;
-  color: #2D80D2;
+  background-color: #e0edfc;
+  color: #2d80d2;
   font-family: "Supermercado One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 22px;
 }
+
 h1 {
+  font-size: 46px;
   font-weight: 600;
   color: rgb(216, 212, 255);
-  padding-left:20px;
-  padding-top:10px;
-  margin:0;
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: 0;
 }
+
 h2 {
+  font-size: 34px;
   font-weight: 600;
-  color: #22A8A8;
+  color: #22a8a8;
   text-align: center;
 }
+
+h3{
+  margin: 10px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -40,10 +49,11 @@ header {
   background-color: rgb(246, 246, 255);
   margin-top: 15px;
 }
+
 .navBar {
   display: flex;
   padding: 25px 10px;
-  margin:0px;
+  margin: 0px;
 }
 
 .navBar li {
@@ -56,8 +66,8 @@ section {
   scroll-margin-top: 4rem;
 }
 
-#About p{
-  text-align:center;
+#About p {
+  text-align: center;
 }
 
 #Experience ul {
@@ -72,13 +82,16 @@ section {
   margin: 5px;
   list-style-type: none;
 }
+
 .title-date-cont {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  
 }
+
 #Experience ul li p {
-  padding: 10px;
+  padding:10px;
+  margin:0px;
 }
 
 #Connect {
@@ -86,19 +99,19 @@ section {
   font-style: italic;
 }
 
-.navBar a{
-  color: #3EFDFD
+.navBar a {
+  color: #3efdfd;
 }
 
 #Connect a {
-  color: #22A764;
-  
+  color: #22a764;
 }
+
 #Connect ul {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  
+  padding-left:0;
 }
 
 @media all and (max-width: 750px) {
