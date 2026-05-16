@@ -13,32 +13,30 @@
     />
   </head>
   <body>
+    <!------------------- NAV -------------------------------->
     <header>
       <h1>Renzo Romero</h1>
+
       <nav>
         <ul class="navBar">
-          <li id="nav-topic"><a href="#anchor1">Skills</a></li>
-          <li id="nav-topic"><a href="#anchor2">Projects</a></li>
-          <li id="nav-topic"><a href="#anchor3">About</a></li>
-          <li id="nav-topic"><a href="#anchor4">Experience</a></li>
-          <li id="nav-topic"><a href="#anchor5">Connect</a></li>
+          <li><a class="navLink" href="#Skills">Skills</a></li>
+          <li><a class="navLink" href="#Projects">Projects</a></li>
+          <li><a class="navLink" href="#About">About</a></li>
+          <li><a class="navLink" href="#Experience">Experience</a></li>
+          <li><a class="navLink" href="#Connect">Connect</a></li>
         </ul>
       </nav>
     </header>
 
-    <img class="photo" src="images/photo.jpg" alt="picture of me" />
-
     <!------------------------- Skills ----------------------->
 
     <section id="Skills">
-      <span id="anchor1"></span>
       <h2>Skills</h2>
     </section>
 
     <!------------------------- Projects ----------------------->
 
     <section id="Projects">
-      <span id="anchor2"></span>
       <h2>Projects</h2>
       <ul></ul>
     </section>
@@ -46,7 +44,8 @@
     <!------------------------- About ----------------------->
 
     <section id="About">
-      <span id="anchor3"></span>
+      <img class="photo" src="images/photo.jpg" alt="picture of me" />
+
       <h2>About</h2>
       <p>
         My name is Renzo Romero. I <strong>love</strong> stategy games and
@@ -57,15 +56,14 @@
     <!------------------------- Experience ----------------------->
 
     <section id="Experience">
-      <span id="anchor4"></span>
       <h2>Experience</h2>
       <ul>
-        <li class="skill-container">
+        <li>
           <div class="title-date-cont">
-            <h3 id="text-border">Bartending</h3>
-            <p id="text-border">2021-current</p>
+            <h3>Bartending</h3>
+            <p id="experience-date">2021-current</p>
           </div>
-          <p>
+          <p id="experience-content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
             repellendus assumenda eos sit at doloremque error suscipit aliquid
             velit nam expedita qui, rerum id possimus dolores alias sint sed
@@ -73,12 +71,12 @@
           </p>
         </li>
 
-        <li class="skill-container">
+        <li>
           <div class="title-date-cont">
-            <h3 id="text-border">Game Development</h3>
-            <p id="text-border">2016-current</p>
+            <h3>Bartending</h3>
+            <p id="experience-date">2021-current</p>
           </div>
-          <p>
+          <p id="experience-content">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
             repellendus assumenda eos sit at doloremque error suscipit aliquid
             velit nam expedita qui, rerum id possimus dolores alias sint sed
@@ -86,27 +84,15 @@
           </p>
         </li>
 
-        <li class="skill-container">
-          <div class="title-date-cont">
-            <h3 id="text-border">Software Development</h3>
-            <p id="text-border">2025-Current</p>
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            repellendus assumenda eos sit at doloremque error suscipit aliquid
-            velit nam expedita qui, rerum id possimus dolores alias sint sed
-            nesciunt!
-          </p>
-        </li>
+        
       </ul>
     </section>
-
     <!------------------------- Connect ----------------------->
 
     <section id="Connect">
-      <span id="anchor5"></span>
       <h2>Connect</h2>
-      <ul id="links">
+
+      <ul>
         <li>
           <a
             class="link"
@@ -114,12 +100,16 @@
             >LinkedIn</a
           >
         </li>
+
         <li>
           <a class="link" href="https://rromero16.artstation.com/"
             >Artstation</a
           >
         </li>
-        <li><a class="link" href="https://github.com/Coenzo19">GitHub</a></li>
+
+        <li>
+          <a class="link" href="https://github.com/Coenzo19">GitHub</a>
+        </li>
       </ul>
     </section>
   </body>

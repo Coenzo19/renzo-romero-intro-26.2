@@ -1,20 +1,42 @@
 body {
   margin: 0;
-  background-color: #cde7f8;
-  color: rgb(55, 175, 184);
+  background-color: #a0c9f0;
   font-family: "Supermercado One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: #103963;
   font-size: 22px;
 }
+
 header {
-  background-color: rgb(55, 175, 184);
+  display: flex;
+  justify-content: space-between;
+  background-color: #1e5d9b;
   font-style: italic;
   position: sticky;
-  top: 0;
-  color: rgb(246, 246, 255);
-  padding: 10px 0;
+  top: 0px;
 }
+
+h1 {
+  font-weight: 600;
+  color: rgb(216, 212, 255);
+}
+
+h2 {
+  font-weight: 600;
+  color: #188383;
+}
+
+h3 {
+  color: #053737;
+}
+
+header h1 {
+  padding-left: 10px;
+  padding-top: 10px;
+  margin: 0px;
+}
+
 .photo {
   display: block;
   width: 300px;
@@ -25,91 +47,77 @@ header {
   background-color: rgb(246, 246, 255);
   margin-top: 15px;
 }
-h1 {
-  text-align: center;
-  font-size: 50px;
-  color: rgb(216, 212, 255);
-}
-h2 {
-  text-align: center;
-  font-size: 36px;
-  color: rgb(180, 193, 216);
-}
 
 .navBar {
   display: flex;
-  justify-content: space-around;
+  padding: 25px 10px;
+  margin: 0px;
 }
 
-#nav-topic {
-  padding: 0 5px;
+.navBar li {
+  padding: 0px 8px;
   list-style-type: none;
 }
 
-#anchor1 {
-  position: absolute;
-  top: 440px;
-}
-#anchor2 {
-  position: absolute;
-  top: 510px;
-}
-#anchor3 {
-  position: absolute;
-  top: 620px;
-}
-#anchor4 {
-  position: absolute;
-  top: 780px;
-}
-#anchor5 {
-  position: absolute;
-  bottom: 0px;
-}
-#About {
+section {
   padding: 10px;
+  scroll-margin-top: 4rem;
+}
+
+#About {
   text-align: center;
 }
-/* -------------- Experience ------------------ */
-#Experience {
-  
+
+#Experience ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
 }
-.skill-container {
-  color: blue;
+
+#Experience ul li {
   background: lightblue;
   border: 2px solid blue;
   margin: 5px;
   list-style-type: none;
 }
+
 .title-date-cont {
   display: flex;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 0 15px;
 }
 
-#text-border {
-  border: 2px solid rgb(16, 185, 120);
-  border-radius: 10px;
-  padding: 5px;
+#experience-date {
+  color: blue;
+  padding-top: 10px;
 }
 
-/* ------Connect------ */
+#experience-content {
+  padding: 0 10px;
+}
+
 #Connect {
   padding-bottom: 15px;
   font-style: italic;
 }
 
-.link {
-  color: green;
+.navLink {
+  color: #4efd9f;
 }
-#links {
+
+#Connect ul {
   display: flex;
   justify-content: space-around;
 }
-
-/* class uses a . + element */
-/* border: 2px dotted pink;
-    border-left:2px solid red;
-    border-botom-color: red
-    margin:10px 10px 10px 10px
-    padding */
+.link {
+  color: #1e5d9b;
+}
+@media all and (max-width: 780px) {
+  .navBar {
+    flex-direction: column;
+    color: blue;
+  }
+  header {
+    position: static;
+  }
+}
