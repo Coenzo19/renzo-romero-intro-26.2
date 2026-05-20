@@ -93,6 +93,17 @@ section {
   margin: 0px;
 }
 
+#skills ul{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+#skills ul li{
+  padding:2px 10px;
+}
+
 #Connect {
   padding-bottom: 15px;
   font-style: italic;
@@ -111,6 +122,15 @@ section {
   justify-content: space-around;
   list-style-type: none;
   padding-left: 0;
+}
+footer{
+  background: #03344F;
+  padding:5px;
+}
+footer p{
+  color:#3efdfd;
+  text-align:center;
+
 }
 
 @media all and (max-width: 750px) {
