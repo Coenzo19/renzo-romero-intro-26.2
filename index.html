@@ -25,6 +25,7 @@
           <li><a href="#About">About</a></li>
           <li><a href="#Experience">Experience</a></li>
           <li><a href="#Connect">Connect</a></li>
+          <li><a href="#messageForm">Message</a></li>
         </ul>
       </nav>
     </header>
@@ -59,10 +60,8 @@
             <h3>2021-current</h3>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            repellendus assumenda eos sit at doloremque error suscipit aliquid
-            velit nam expedita qui, rerum id possimus dolores alias sint sed
-            nesciunt!
+            Providing amazing customer service, making custom drinks,checking
+            and restocking inventory, balancing waiting tables.
           </p>
         </li>
 
@@ -72,10 +71,7 @@
             <h3>2016-current</h3>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-            repellendus assumenda eos sit at doloremque error suscipit aliquid
-            velit nam expedita qui, rerum id possimus dolores alias sint sed
-            nesciunt!
+            Create 3D assets for game development. Create Uv's,texture assets, render props, retopologize assets, troubleshooting.
           </p>
         </li>
       </ul>
@@ -106,6 +102,28 @@
           <a href="https://github.com/Coenzo19">GitHub</a>
         </li>
       </ul>
+    </section>
+    <!------------------------- Message ----------------------->
+    <section>
+      <h2>Leave a Message</h2>
+      <form id="messageForm" name="leave_message">
+        <label for="text">Username:</label>
+        <input type="text" name="usersName" required="true" /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" name="usersEmail" required="true" /><br />
+
+        <label for="userMessage">User Message: </label>
+        <textarea name="usersMessage" required="true"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="messages">
+      <h2>Messages</h2>
+      <div id="message-container">
+        <ul></ul>
+      </div>
     </section>
 
     <script src="js/index.js"></script>
