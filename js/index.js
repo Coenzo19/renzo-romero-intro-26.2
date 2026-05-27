@@ -36,7 +36,7 @@ for (sk of skills) {
   skillsList.appendChild(skill);
 }
 
-const messageForm = document.getElementById("messageForm");
+const messageForm = document.querySelector("form[name = 'leave_message']",)
 messageForm.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
@@ -46,6 +46,9 @@ function onFormSubmit(event) {
   const name = event.target.usersName.value;
   const email = event.target.usersEmail.value;
   const message = event.target.usersMessage.value;
+  console.log(name);
+  console.log(email);
+  console.log(message);
 
   //get elements from html
   const messageSection = document.getElementById("messages");
