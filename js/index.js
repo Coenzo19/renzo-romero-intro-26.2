@@ -36,7 +36,7 @@ for (sk of skills) {
   skillsList.appendChild(skill);
 }
 
-const messageForm = document.querySelector("form[name = 'leave_message']",)
+const messageForm = document.querySelector("form[name = 'leave_message']");
 messageForm.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
@@ -64,14 +64,14 @@ function onFormSubmit(event) {
 
   //create editButton,set attributed and add eventListener
   const editButton = document.createElement("button");
-  editButton.innerText = "edit";
+  editButton.innerText = "Edit";
   editButton.setAttribute("type", "button");
   editButton.setAttribute("class", "editButton");
   editButton.addEventListener("click", onEditMessage);
 
   //create removeButton,set attribute and add eventListener
   const removeButton = document.createElement("button");
-  removeButton.innerText = "remove";
+  removeButton.innerText = "Remove";
   removeButton.setAttribute("type", "button");
   removeButton.addEventListener("click", onRemoveButton);
 
