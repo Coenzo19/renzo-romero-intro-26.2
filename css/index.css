@@ -136,50 +136,89 @@ footer p {
   text-align: center;
 }
 
-#message-container {
-  display: flex;
-  align-items: center;
-  border-style: inset;
-  border-radius: 25px;
-  background-color: aliceblue;
-}
-
 #messageForm {
   display: flex;
   flex-direction: column;
   margin: 0 15%;
 }
 
-#message-container ul {
-  padding-left: 20px;
+#messages ul {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  border-style: inset;
+  border-radius: 25px;
+  background-color: #91e0f1;
 }
 
-#message-container ul li {
+#messages ul li {
+  min-width: fit-content;
+  width: 100px;
   list-style-type: none;
   margin: 10px 0;
-}
-
-#message-container ul li span {
-  display: flex;
-}
-#message-container ul li input {
-  display: flex;
-}
-
-#message-container ul li button {
-  margin: 0 3px;
-  border: #188383 solid 2px;
-  background-color: #dcffff;
+  padding: 5px 0px 5px 5px;
+  border: solid #d2e2f1 2px;
   border-radius: 5px;
-  color: #03344f;
+  background: aliceblue;
+  color: teal;
+}
+
+/* #messages ul li input {
+  display: flex;
+}  */
+
+#messages ul li a {
+  color: #105858;
+  font-weight: 600;
+}
+
+#messages ul li button {
+  margin: 0 3px;
+  padding: 5px 10px;
+  border: #188383 solid 2px;
+  background-color: azure;
+  border-radius: 5px;
+  color: #2d80d2;
+  font-weight: 600;
+}
+
+#messages ul li button:hover {
+  background: white;
+  cursor: pointer;
 }
 
 #messageForm button {
   display: inline-block;
   padding: 10px 15px;
-  margin: 10px 0;
+  margin-top: 10px;
   align-self: center;
+  border: 3px groove #6ab6df;
+  border-radius: 5px;
+  color: #2d80d2;
+  font-weight: 600;
+  background: aliceblue;
 }
+#messageForm button:hover {
+  cursor: pointer;
+  background: white;
+}
+
+input {
+  padding: 3px;
+  border: 2px solid #188383;
+  border-radius: 5px;
+  background: azure;
+}
+label {
+  margin-top: 10px;
+}
+textarea {
+  border: 2px solid #188383;
+  border-radius: 5px;
+  background: azure;
+}
+
 @media all and (max-width: 750px) {
   .navBar {
     flex-direction: column;

@@ -25,7 +25,7 @@
           <li><a href="#About">About</a></li>
           <li><a href="#Experience">Experience</a></li>
           <li><a href="#Connect">Connect</a></li>
-          <li><a href="#messageForm">Message</a></li>
+          <li><a href="#leave-message">Message</a></li>
         </ul>
       </nav>
     </header>
@@ -71,7 +71,8 @@
             <h3>2016-current</h3>
           </div>
           <p>
-            Create 3D assets for game development. Create Uv's,texture assets, render props, retopologize assets, troubleshooting.
+            Create 3D assets for game development. Create Uv's,texture assets,
+            render props, retopologize assets, troubleshooting.
           </p>
         </li>
       </ul>
@@ -104,26 +105,24 @@
       </ul>
     </section>
     <!------------------------- Message ----------------------->
-    <section>
+    <section id="leave-message">
       <h2>Leave a Message</h2>
       <form id="messageForm" name="leave_message">
-        <label for="text">Username:</label>
-        <input type="text" name="usersName" required="true" /><br />
+        <label for="usersName">Username:</label>
+        <input type="text" name="usersName" id="usersName" required /><br />
 
-        <label for="email">Email:</label>
-        <input type="email" name="usersEmail" required="true" /><br />
+        <label for="usersEmail">Email:</label>
+        <input type="email" name="usersEmail" id="usersEmail" required /><br />
 
-        <label for="userMessage">User Message: </label>
-        <textarea name="usersMessage" required="true"></textarea>
+        <label for="usersMessage">User Message: </label>
+        <textarea name="usersMessage" id="usersMessage" required></textarea>
         <button type="submit">Submit</button>
       </form>
     </section>
 
     <section id="messages">
       <h2>Messages</h2>
-      <div id="message-container">
-        <ul></ul>
-      </div>
+      <ul></ul>
     </section>
 
     <script src="js/index.js"></script>
