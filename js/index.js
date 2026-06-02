@@ -147,3 +147,31 @@ function onFormSubmit(event) {
 }
 //sets the messagesection to hidden on start
 document.getElementById("messages").hidden = true;
+
+fetch("https://api.github.com/users/Coenzo19/repos")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const repositories = data;
+    if (repositories.length===0) {
+      throw new Error(Error,'Project Section is Empty');
+    }
+    console.log(repositories);
+    const projectSection = document.getElementById("Projects");
+    const projectList = projectSection.querySelector("ul");
+    for (obj of repositories) {
+      const project = document.createElement("li");
+      project.innerText = obj.name;
+      projectList.appendChild(project);
+
+      const img = document.createElement("img");
+      img.src = "images/placeHolder.png";
+      img.alt = `${obj.name} image`;
+      project.prepend(img);
+    }
+  })
+  .catch((error) => console.log("An error occurred:", error));

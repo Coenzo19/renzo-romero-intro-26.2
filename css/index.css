@@ -64,7 +64,7 @@ header {
 
 section {
   padding: 10px;
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 6rem;
 }
 
 #About p {
@@ -146,7 +146,6 @@ footer p {
   padding: 0 20px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   border-style: inset;
   border-radius: 25px;
   background-color: #91e0f1;
@@ -217,6 +216,27 @@ textarea {
   border: 2px solid #188383;
   border-radius: 5px;
   background: azure;
+}
+
+#Projects ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 5px;
+  background-color: rgb(216, 212, 255);
+  border-radius: 10px;
+}
+#Projects ul li {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  background-color: azure;
+  padding: 5px;
+}
+#Projects ul img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid grey;
 }
 
 @media all and (max-width: 750px) {
