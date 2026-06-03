@@ -238,12 +238,20 @@ textarea {
   height: auto;
   border: 1px solid grey;
 }
-
+#error{
+  color:red;
+  text-align: center;
+}
 @media all and (max-width: 750px) {
   .navBar {
     flex-direction: column;
   }
   header {
     position: static;
+  }
+
+  #Projects ul {
+    display: flex;
+    flex-direction: column;
   }
 }

@@ -148,6 +148,9 @@ function onFormSubmit(event) {
 //sets the messagesection to hidden on start
 document.getElementById("messages").hidden = true;
 
+const projectSection = document.getElementById("Projects");
+const projectList = projectSection.querySelector("ul");
+
 fetch("https://api.github.com/users/Coenzo19/repos")
   .then((response) => {
     if (!response.ok) {
@@ -157,21 +160,31 @@ fetch("https://api.github.com/users/Coenzo19/repos")
   })
   .then((data) => {
     const repositories = data;
-    if (repositories.length===0) {
-      throw new Error(Error,'Project Section is Empty');
+
+    if (repositories.length === 0) {
+      const errorMessage = document.createElement("li");
+      errorMessage.setAttribute("id", "error");
+      errorMessage.innerText = "Currently there are no active project";
+      projectList.appendChild(errorMessage);
+      return;
     }
     console.log(repositories);
-    const projectSection = document.getElementById("Projects");
-    const projectList = projectSection.querySelector("ul");
+
     for (obj of repositories) {
       const project = document.createElement("li");
       project.innerText = obj.name;
-      projectList.appendChild(project);
 
       const img = document.createElement("img");
       img.src = "images/placeHolder.png";
       img.alt = `${obj.name} image`;
+
       project.prepend(img);
+      projectList.appendChild(project);
     }
   })
-  .catch((error) => console.log("An error occurred:", error));
+  .catch((error) => {
+    const errorMessage2 = document.createElement("li");
+    errorMessage2.setAttribute("id", "error");
+    errorMessage2.innerText = `An error has occured, ${error}`;
+    projectList.appendChild(errorMessage2);
+  });
