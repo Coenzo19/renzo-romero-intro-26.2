@@ -164,11 +164,10 @@ fetch("https://api.github.com/users/Coenzo19/repos")
     if (repositories.length === 0) {
       const errorMessage = document.createElement("li");
       errorMessage.setAttribute("id", "error");
-      errorMessage.innerText = "Currently there are no active project";
+      errorMessage.innerText = "Currently there are no active projects";
       projectList.appendChild(errorMessage);
       return;
     }
-    console.log(repositories);
 
     for (obj of repositories) {
       const project = document.createElement("li");
