@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  
+  font-family: "Luckiest Guy", cursive;
+  letter-spacing: 1px;
+  font-size: 22px;
+  
+}
+
+body{
+  background: peachpuff;
+}
+
+h2 {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 36px;
+}
+
+body nav{
+  display:flex;
+  justify-content: space-between;
+  padding:10px;
+}
+
+.dropdown{
+  padding:10px;
+  text-align:center;
+}
+.dropdown select{
+
+text-align:center;
+}
+.factSection ol{
+    padding:0;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.fact{
+    background-color: peru;
+}
+
+.fact p{
+    text-align: center;
+    padding:10px;
+}
+.factSection ol{
+    padding:10px;
+    
+}
+.factSection ol .button{
+    border:none;
+    border-radius: 10px;
+    background-color: peru;
+    margin:5px;
+    padding:15px;
+    
+}
+.factSection ol .button:hover{
+    border:none;
+    border-radius: 10px;
+    background-color: rgb(235, 165, 96);
+}
+
+@media all and (max-width: 750px) {
+  .factSection ol{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+}

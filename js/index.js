@@ -187,3 +187,5 @@ fetch("https://api.github.com/users/Coenzo19/repos")
     errorMessage2.innerText = `An error has occured, ${error}`;
     projectList.appendChild(errorMessage2);
   });
+
+
