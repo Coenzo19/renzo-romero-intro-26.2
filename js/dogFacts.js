@@ -59,7 +59,7 @@ function populateFacts(data, event) {
   if (event === "Life Span") {
     console.log(" Life SPan is here");
     factTitle.innerText = event;
-    fact.innerText = data['life_span'];
+    fact.innerText = data["life_span"];
 
     return;
   }
@@ -102,3 +102,6 @@ factSection.hidden = true;
 //     console.error("Error fetching data:", error);
 //   }
 // }
+
+
+//getBreed details using this api:https://api.thedogapi.com/v1/breeds/{BREED_ID}

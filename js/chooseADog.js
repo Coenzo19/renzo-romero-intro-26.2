@@ -27,7 +27,6 @@ async function getDogData() {
     const data = await response.json();
 
     createDropdown(data);
-    //populateFactList(data);
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -61,17 +60,20 @@ function createDropdown(data) {
 }
 
 async function loadByBreed(breed) {
-  const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`);
+  const response = await fetch(
+    `https://dog.ceo/api/breed/${breed}/images/random`,
+  );
   const data = await response.json();
   //console.log(data);
 
-  createSlideShow(data.message);
+  loadImage(data.message);
 }
-const imageSection = document.getElementById("images");
-const image = document.createElement("img");
 
-function createSlideShow(data) {
-  image.src = data[Math.floor(Math.random() * Object.keys(data).length)];
+function loadImage(data) {
+  const imageSection = document.getElementById("images");
+  const image = document.createElement("img");
+  imageSection.innerHTML = "";
+  image.src = data;
   image.alt = "photoPlaceholder";
   imageSection.append(image);
 }
