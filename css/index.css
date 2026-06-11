@@ -226,6 +226,7 @@ textarea {
   background-color: rgb(216, 212, 255);
   border-radius: 10px;
 }
+
 #Projects ul li {
   display: flex;
   flex-direction: column;
@@ -233,15 +234,18 @@ textarea {
   background-color: azure;
   padding: 5px;
 }
+
 #Projects ul img {
   max-width: 100%;
   height: auto;
   border: 1px solid grey;
 }
+
 #error {
   color: red;
   text-align: center;
 }
+
 @media all and (max-width: 750px) {
   .navBar {
     flex-direction: column;
