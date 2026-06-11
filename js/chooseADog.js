@@ -1,23 +1,4 @@
-// async function getDogFacts() {
-//   try {
-//     const response = await fetch("https://api.thedogapi.com/v1/breeds", {
-//       headers: {
-//         "x-api-key":
-//           "live_NKqLkdJfzPTsOnRVofnj8YmACWDLHdE5QnPIXUZ2lKt7zCLk83P7eX9ifMI2g1m0",
-//       },
-//     });
-//     if (!response.ok) {
-//       throw new Error(error);
-//     }
-//     const data = await response.json();
-//     console.log(data);
-//     createDropdown(data);
-//     //populateFactList(data);
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// }
-
+//fetches data from api like breed name
 async function getDogData() {
   try {
     const response = await fetch("https://dog.ceo/api/breeds/list/all");
@@ -50,25 +31,20 @@ function createDropdown(data) {
       loadByBreed(key);
     });
 
-    // option.addEventListener("click", function () {
-    //   getDogFacts(key);
-    // });
-
     select.append(option);
-    //console.log(`${key}: ${value}`);
+    
   }
 }
 
+//fetches random image from api
 async function loadByBreed(breed) {
   const response = await fetch(
     `https://dog.ceo/api/breed/${breed}/images/random`,
   );
   const data = await response.json();
-  //console.log(data);
-
   loadImage(data.message);
 }
-
+//populates html with image
 function loadImage(data) {
   const imageSection = document.getElementById("images");
   const image = document.createElement("img");
@@ -77,33 +53,3 @@ function loadImage(data) {
   image.alt = "photoPlaceholder";
   imageSection.append(image);
 }
-
-// function populateFactList(breed) {
-//   const listSection = document.getElementById("facts");
-//   const factList = listSection.querySelector("ol");
-//   const fact = document.createElement("li");
-//   fact.innerText = "hi";
-//   factList.append(fact);
-// }
-
-// async function getDogFacts(key) {
-//   try {
-//     const response = await fetch("https://api.thedogapi.com/v1/breeds", {
-//       headers: {
-//         "x-api-key":
-//           "live_NKqLkdJfzPTsOnRVofnj8YmACWDLHdE5QnPIXUZ2lKt7zCLk83P7eX9ifMI2g1m0",
-//       },
-//     });
-//     if (!response.ok) {
-//       throw new Error(error);
-//     }
-//     const data = await response.json();
-//     console.log(data);
-//     console.log("check1 " + key);
-//     console.log("check2 " + data[0].name.toLowerCase());
-//     const target = data.find((element) => element.name.toLowerCase() === key);
-//     console.log(target);
-//   } catch (error) {
-//     console.error("Error fetching data:", error);
-//   }
-// }
