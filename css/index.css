@@ -238,8 +238,8 @@ textarea {
   height: auto;
   border: 1px solid grey;
 }
-#error{
-  color:red;
+#error {
+  color: red;
   text-align: center;
 }
 @media all and (max-width: 750px) {
