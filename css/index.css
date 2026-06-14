@@ -78,7 +78,6 @@ section {
 
 #Experience ul li {
   background-color: #eff5fc;
-
   border-radius: 10px;
   border: 3px solid #03344f;
   margin: 5px;
@@ -102,6 +101,7 @@ section {
   flex-wrap: wrap;
   list-style-type: none;
 }
+
 #skills ul li {
   padding: 2px 10px;
 }
@@ -163,10 +163,6 @@ footer p {
   color: teal;
 }
 
-/* #messages ul li input {
-  display: flex;
-}  */
-
 #messages ul li a {
   color: #105858;
   font-weight: 600;
@@ -174,12 +170,13 @@ footer p {
 
 #messages ul li button {
   margin: 0 3px;
-  padding: 5px 10px;
+  padding:10px 15px;
   border: #188383 solid 2px;
   background-color: azure;
   border-radius: 5px;
   color: #2d80d2;
   font-weight: 600;
+  
 }
 
 #messages ul li button:hover {
@@ -198,24 +195,28 @@ footer p {
   font-weight: 600;
   background: aliceblue;
 }
+
 #messageForm button:hover {
   cursor: pointer;
   background: white;
 }
 
 input {
-  padding: 3px;
+  padding: 10px 5px;
   border: 2px solid #188383;
   border-radius: 5px;
   background: azure;
 }
+
 label {
   margin-top: 10px;
 }
+
 textarea {
   border: 2px solid #188383;
   border-radius: 5px;
   background: azure;
+  padding:2px;
 }
 
 #Projects ul {

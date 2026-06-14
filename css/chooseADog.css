@@ -1,6 +1,5 @@
 * {
   margin: 0;
-
   font-family: "Luckiest Guy", cursive;
   letter-spacing: 1px;
   font-size: 22px;
@@ -10,7 +9,11 @@ body {
   background: peachpuff;
 }
 
-h2 {
+nav a {
+  font-size: 28px;
+}
+
+h1 {
   text-align: center;
   padding: 20px 0;
   font-size: 36px;
@@ -35,4 +38,8 @@ body nav {
 .dropdown {
   padding: 10px;
   text-align: center;
+}
+.dropdown select {
+  text-align: center;
+  width: 350px;
 }

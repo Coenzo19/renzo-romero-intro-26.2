@@ -1,8 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>DogPage</title>
     <link href="css/dogFacts.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
       href="https://cdn-icons-png.flaticon.com/512/1998/1998627.png"
@@ -23,27 +25,31 @@
     </nav>
 
     <header>
-      <h2>Show me the Dog Facts</h2>
+      <h1>Show me the Dog Facts</h1>
     </header>
 
     <div class="dropdown"></div>
 
     <div class="factSection">
-      <ol>
-        
+      <div class="buttons">
         <button type="button" id="descBtn" class="button">description</button>
         <button type="button" id="histBtn" class="button">history</button>
         <button type="button" id="lifeBtn" class="button">Life Span</button>
         <button type="button" id="origBtn" class="button">origin</button>
         <button type="button" id="tempBtn" class="button">temperament</button>
-        
-      </ol>
-      <div class='fact'>
+      </div>
+      <div class="fact">
         <h2>Choose a Fact</h2>
-        <p>This is where the fact will be</p>
+        <ol>
+          <li id="description"></li>
+          <li id="history"></li>
+          <li id="life_span"></li>
+          <li id="origin"></li>
+          <li id="temperament"></li>
+        </ol>
       </div>
     </div>
 
+    <script src="js/dogFacts.js"></script>
   </body>
-  <script src="js/dogFacts.js"></script>
 </html>

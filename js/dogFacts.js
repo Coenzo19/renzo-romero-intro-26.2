@@ -1,3 +1,7 @@
+getDogFacts();
+
+document.querySelector(".factSection").hidden = true;
+
 //fetches infromation from api and calls the createDropdown(data) function
 async function getDogFacts() {
   try {
@@ -11,64 +15,133 @@ async function getDogFacts() {
       throw new Error(error);
     }
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
     createDropdown(data);
   } catch (error) {
     console.error("Error fetching data:", error);
+    document.querySelector("h1").innerText =
+      "Error fetching data: " + error + " Please try again later";
+    document.querySelector("h1").style.color = "red";
   }
 }
-
-getDogFacts();
 
 //creates a list populated by dogs given api data
 function createDropdown(data) {
   const list = document.querySelector(".dropdown");
   const select = document.createElement("select");
-  const text = document.createElement("option");
-  text.innerText = "choose a dog";
-  select.append(text);
+  // add an event listener that calls a function,passing the data from the api and the value of the clicked element
+  select.addEventListener("click", function () {
+    console.log(data, event.target.value);
+    toggleSection(data, event.target.value);
+  });
+
+  //create default text and append
+  const defaultText = document.createElement("option");
+  defaultText.setAttribute("id", "default");
+  defaultText.innerText = "choose a dog";
+  select.append(defaultText);
   list.append(select);
 
+  //adding to the dropdown menu from the api using a loop since the data is an array of objects
   data.forEach((element) => {
     const option = document.createElement("option");
     option.innerText = element.name;
-    option.addEventListener("click", function () {
-      loadFacts(element);
-    });
+
     select.append(option);
   });
 }
 
-//query html elemts to access via javascript
-const factSection = document.querySelector(".factSection");
-const factList = factSection.querySelector("ol");
-
-//hide factSection until cicked upon to reveal categories abd add event listeners
-function loadFacts(data) {
+//reveals information from the api based on choice
+function toggleSection(data, target) {
+  const factSection = document.querySelector(".factSection");
+  //reveal info options
   factSection.hidden = false;
-  document.addEventListener("click", function (e) {
-    if (e.target.tagName == "BUTTON") {
-      populateFacts(data, event.target.innerText);
-    }
-  });
-}
-
-//populates category based on what was clicked and returns data from api
-function populateFacts(data, event) {
-  const factCategory = document.querySelector(".fact");
-  const factTitle = factCategory.querySelector("h2");
-  const fact = factCategory.querySelector("p");
-
-  if (event === "Life Span") {
-    console.log(" Life SPan is here");
-    factTitle.innerText = event;
-    fact.innerText = data["life_span"];
-
-    return;
+  //remove default text after click;
+  if (document.querySelector("#default")) {
+    document.querySelector("#default").remove();
   }
 
-  factTitle.innerText = event;
-  fact.innerText = data[event];
+  //grab button element
+  const descBtn = document.querySelector("#descBtn");
+  const histBtn = document.querySelector("#histBtn");
+  const lifeBtn = document.querySelector("#lifeBtn");
+  const origBtn = document.querySelector("#origBtn");
+  const tempBtn = document.querySelector("#tempBtn");
+
+  //grab list elements
+  const descItem = document.querySelector("#description");
+  const histItem = document.querySelector("#history");
+  const lifeItem = document.querySelector("#life_span");
+  const origItem = document.querySelector("#origin");
+  const tempItem = document.querySelector("#temperament");
+
+  //hide elements until button is clicked
+  descItem.hidden = true;
+  histItem.hidden = true;
+  lifeItem.hidden = true;
+  origItem.hidden = true;
+  tempItem.hidden = true;
+
+  //populates list from data using a loop
+  for (element of data) {
+    if (element.name === target) {
+      //hides elements until buttons are clicked;
+      document.querySelector("ol").hidden = true;
+
+      descItem.innerText = element.description;
+      histItem.innerText = element.history;
+
+      lifeItem.innerText = element.life_span;
+      if (element.life_span === null) {
+        lifeItem.textContent = "data unavailable";
+      }
+      origItem.innerText = element.origin;
+      tempItem.innerText = element.temperament;
+    }
+  }
+  //toggles only relevent information based on button;
+  descBtn.addEventListener("click", (event) => {
+    document.querySelector("ol").hidden = false;
+    descItem.hidden = false;
+    histItem.hidden = true;
+    lifeItem.hidden = true;
+    origItem.hidden = true;
+    tempItem.hidden = true;
+  });
+
+  histBtn.addEventListener("click", (event) => {
+    document.querySelector("ol").hidden = false;
+    descItem.hidden = true;
+    histItem.hidden = false;
+    lifeItem.hidden = true;
+    origItem.hidden = true;
+    tempItem.hidden = true;
+  });
+
+  lifeBtn.addEventListener("click", (event) => {
+    document.querySelector("ol").hidden = false;
+    descItem.hidden = true;
+    histItem.hidden = true;
+    lifeItem.hidden = false;
+    origItem.hidden = true;
+    tempItem.hidden = true;
+  });
+
+  origBtn.addEventListener("click", (event) => {
+    document.querySelector("ol").hidden = false;
+    descItem.hidden = true;
+    histItem.hidden = true;
+    lifeItem.hidden = true;
+    origItem.hidden = false;
+    tempItem.hidden = true;
+  });
+
+  tempBtn.addEventListener("click", (event) => {
+    document.querySelector("ol").hidden = false;
+    descItem.hidden = true;
+    histItem.hidden = true;
+    lifeItem.hidden = true;
+    origItem.hidden = true;
+    tempItem.hidden = false;
+  });
 }
-//hides facts section until option is clicked
-factSection.hidden = true;

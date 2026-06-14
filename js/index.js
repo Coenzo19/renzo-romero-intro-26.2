@@ -148,9 +148,11 @@ function onFormSubmit(event) {
 //sets the messagesection to hidden on start
 document.getElementById("messages").hidden = true;
 
+//query project elements to add elemnts using javascript
 const projectSection = document.getElementById("Projects");
 const projectList = projectSection.querySelector("ul");
 
+//fetching projects from public repository
 fetch("https://api.github.com/users/Coenzo19/repos")
   .then((response) => {
     if (!response.ok) {
@@ -161,6 +163,7 @@ fetch("https://api.github.com/users/Coenzo19/repos")
   .then((data) => {
     const repositories = data;
 
+    //if there are no projects then let user know
     if (repositories.length === 0) {
       const errorMessage = document.createElement("li");
       errorMessage.setAttribute("id", "error");
@@ -168,7 +171,7 @@ fetch("https://api.github.com/users/Coenzo19/repos")
       projectList.appendChild(errorMessage);
       return;
     }
-
+    //loop through data and populate Project section with projects
     for (obj of repositories) {
       const project = document.createElement("li");
       project.innerText = obj.name;
@@ -187,5 +190,3 @@ fetch("https://api.github.com/users/Coenzo19/repos")
     errorMessage2.innerText = `An error has occured, ${error}`;
     projectList.appendChild(errorMessage2);
   });
-
-
