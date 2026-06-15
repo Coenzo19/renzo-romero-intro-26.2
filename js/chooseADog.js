@@ -10,6 +10,9 @@ async function getDogData() {
     createDropdown(data);
   } catch (error) {
     console.error("Error fetching data:", error);
+    document.querySelector("h1").innerText =
+      "Error fetching data: " + error + " Please try again later";
+    document.querySelector("h1").style.color = "red";
   }
 }
 
@@ -20,6 +23,10 @@ function createDropdown(data) {
   const list = document.querySelector(".dropdown");
   const select = document.createElement("select");
   const text = document.createElement("option");
+  select.addEventListener("change", function () {
+    loadByBreed(event.target.value);
+  });
+
   text.innerText = "choose a dog";
   select.append(text);
   list.append(select);
@@ -27,29 +34,31 @@ function createDropdown(data) {
   for (const [key, value] of Object.entries(data.message)) {
     const option = document.createElement("option");
     option.innerHTML = key;
-    option.addEventListener("click", function () {
-      loadByBreed(key);
-    });
-
     select.append(option);
-    
   }
 }
 
 //fetches random image from api
 async function loadByBreed(breed) {
-  const response = await fetch(
-    `https://dog.ceo/api/breed/${breed}/images/random`,
-  );
-  const data = await response.json();
-  loadImage(data.message);
+  try {
+    const response = await fetch(
+      `https://dog.ceo/api/breed/${breed}/images/random`,
+    );
+    const data = await response.json();
+    loadImage(data.message, breed);
+  } catch (error) {
+    document.querySelector("h1").innerText =
+      "Error fetching data: " + error + " Please try again later";
+    document.querySelector("h1").style.color = "red";
+    document.querySelector(".dropdown").hidden = true;
+  }
 }
 //populates html with image
-function loadImage(data) {
+function loadImage(data, breed) {
   const imageSection = document.getElementById("images");
   const image = document.createElement("img");
   imageSection.innerHTML = "";
   image.src = data;
-  image.alt = "photoPlaceholder";
+  image.alt = `Image of ${breed}`;
   imageSection.append(image);
 }
