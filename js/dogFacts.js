@@ -18,7 +18,7 @@ async function getDogFacts() {
     //console.log(data);
     createDropdown(data);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    
     document.querySelector("h1").innerText =
       "Error fetching data: " + error + " Please try again later";
     document.querySelector("h1").style.color = "red";
@@ -30,8 +30,8 @@ function createDropdown(data) {
   const list = document.querySelector(".dropdown");
   const select = document.createElement("select");
   // add an event listener that calls a function,passing the data from the api and the value of the clicked element
-  select.addEventListener("click", function () {
-    console.log(data, event.target.value);
+  select.addEventListener("change", function () {
+    
     toggleSection(data, event.target.value);
   });
 
@@ -54,6 +54,8 @@ function createDropdown(data) {
 //reveals information from the api based on choice
 function toggleSection(data, target) {
   const factSection = document.querySelector(".factSection");
+  const factHeader =document.querySelector('.fact').querySelector('h2');
+  factHeader.textContent='Choose a Fact';
   //reveal info options
   factSection.hidden = false;
   //remove default text after click;
@@ -91,6 +93,7 @@ function toggleSection(data, target) {
       descItem.innerText = element.description;
       histItem.innerText = element.history;
 
+      //lifespan has a chance of returning a null value
       lifeItem.innerText = element.life_span;
       if (element.life_span === null) {
         lifeItem.textContent = "data unavailable";
@@ -99,8 +102,9 @@ function toggleSection(data, target) {
       tempItem.innerText = element.temperament;
     }
   }
-  //toggles only relevent information based on button;
+  //buttons reveal information based on which button is clicked,hides other buttons 
   descBtn.addEventListener("click", (event) => {
+    factHeader.textContent=event.target.innerHTML;
     document.querySelector("ol").hidden = false;
     descItem.hidden = false;
     histItem.hidden = true;
@@ -110,6 +114,7 @@ function toggleSection(data, target) {
   });
 
   histBtn.addEventListener("click", (event) => {
+    factHeader.textContent=event.target.innerHTML;
     document.querySelector("ol").hidden = false;
     descItem.hidden = true;
     histItem.hidden = false;
@@ -119,6 +124,7 @@ function toggleSection(data, target) {
   });
 
   lifeBtn.addEventListener("click", (event) => {
+    factHeader.textContent=event.target.innerHTML;
     document.querySelector("ol").hidden = false;
     descItem.hidden = true;
     histItem.hidden = true;
@@ -128,6 +134,7 @@ function toggleSection(data, target) {
   });
 
   origBtn.addEventListener("click", (event) => {
+    factHeader.textContent=event.target.innerHTML;
     document.querySelector("ol").hidden = false;
     descItem.hidden = true;
     histItem.hidden = true;
@@ -137,6 +144,7 @@ function toggleSection(data, target) {
   });
 
   tempBtn.addEventListener("click", (event) => {
+    factHeader.textContent=event.target.innerHTML;
     document.querySelector("ol").hidden = false;
     descItem.hidden = true;
     histItem.hidden = true;

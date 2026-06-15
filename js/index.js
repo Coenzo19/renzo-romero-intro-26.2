@@ -29,7 +29,7 @@ const skills = [
 
 const skillSection = document.querySelector("#skills");
 const skillsList = skillSection.querySelector("ul");
-
+//append skills to section
 for (sk of skills) {
   let skill = document.createElement("li");
   skill.innerText = sk;
